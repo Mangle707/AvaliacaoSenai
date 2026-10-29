@@ -21,6 +21,10 @@ abstract class Robo {
                 ],
     ];
 
+    $json = json_encode($informs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+
+    file_put_contents('robos.json', $json);
+    echo "Arquivo JSON gerado com sucesso!";
    public function __construct($nome){
     $this->nome = $nome;
     
