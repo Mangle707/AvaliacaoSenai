@@ -6,18 +6,16 @@ abstract class Robo {
    public $modelo;
    public $energia;
    public $potencia;
+   public $funcao;
 
-   public function __construct($modelo, $nome, $energia, $potencia){
+   public function __construct($modelo, $nome, $energia, $potencia,$funcao){
     $this->nome = $nome;
     $this->modelo = $modelo;
     $this->energia = $energia;
     $this->potencia = $potencia;
-   }
-   if($modelo === "explorador"){
-      
-   };
-
-
+    $this->funcao = $funcao;
+   
+  
   public function getExplorador(){
     return this->Explorador;
   }
@@ -26,6 +24,34 @@ abstract class Robo {
   }
   public function getDefensor(){
     return this->Defensor;
+  }
+  //request method
+  if ($_SERVER["REQUEST_METHOD"]==="POST"){
+    $nome = $_POST["nome"] ?? "";
+    $operador = $_POST["operador"] ?? "";
+    $modelo = $_POST["modelo"] ?? "";
+
+    if($nome === "" || $modelo == "" || $operador){
+        $mensagem == "Campos nao preenchidos";
+    }
+    else{
+            if($modelo === "explorador"){
+              $potencia = 20;
+              $energia = 100;
+              $funcao = "Investigar Planetas";
+           }
+    else if($modelo === "engenheiro"){
+            $potencia = 15;
+            $energia = 120;
+            $funcao = "Reparar equipamentos";
+
+      }
+    else if($modelo === "Defensor"){
+
+        }
+    }
+
+    }
   }
 }
 
@@ -38,6 +64,11 @@ abstract class Robo {
     <title>Estaçao Espacial</title>
 </head>
 <body>
-    
+    <form>
+
+        <label>
+        
+        </label>
+    </form>
 </body>
 </html>
