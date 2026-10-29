@@ -7,12 +7,16 @@ abstract class Robo {
    public $energia;
    public $potencia;
 
-   public function __construct($nome)
-   {
-    $this->nome;
-    $this->modelo;
-    
+   public function __construct($modelo, $nome, $energia, $potencia){
+    $this->nome = $nome;
+    $this->modelo = $modelo;
+    $this->energia = $energia;
+    $this->potencia = $potencia;
    }
+   if($modelo === "explorador"){
+      
+   };
+
 
   public function getExplorador(){
     return this->Explorador;
@@ -23,8 +27,8 @@ abstract class Robo {
   public function getDefensor(){
     return this->Defensor;
   }
-
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
