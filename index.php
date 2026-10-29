@@ -3,57 +3,63 @@
 
 abstract class Robo {
    public $nome;
-   public $modelo;
-   public $energia;
-   public $potencia;
-   public $funcao;
 
-   public function __construct($modelo, $nome, $energia, $potencia,$funcao){
+   public function __construct($nome){
     $this->nome = $nome;
-    $this->modelo = $modelo;
-    $this->energia = $energia;
-    $this->potencia = $potencia;
-    $this->funcao = $funcao;
-   
-  
-  public function getExplorador(){
-    return this->Explorador;
-  }
-  public function getEngenheiro(){
-    return this->Engenheiro;
-  }
-  public function getDefensor(){
-    return this->Defensor;
-  }
+    
+   }
+       abstract public function operar();
+}
+
+//-----------------------------------------------------
+
+class Explorador extends Robo{
+    public function operar(){
+        return "Preparando maquina";
+    }
+}
+class Engenheiro extends Robo{
+    public function operar(){
+        return "Preparando maquina";
+    }
+}
+class Defensor extends Robo{
+    public function operar(){
+        return "Preparando maquina";
+    }
+}
+
+//________________________________________________________________//
+
+
+//________________________________________________________________//
+
   //request method
   if ($_SERVER["REQUEST_METHOD"]==="POST"){
     $nome = $_POST["nome"] ?? "";
     $operador = $_POST["operador"] ?? "";
     $modelo = $_POST["modelo"] ?? "";
 
-    if($nome === "" || $modelo == "" || $operador){
+       if($nome === "" || $modelo == "" || $operador){
         $mensagem == "Campos nao preenchidos";
-    }
-    else{
-            if($modelo === "explorador"){
-              $potencia = 20;
-              $energia = 100;
-              $funcao = "Investigar Planetas";
-           }
-    else if($modelo === "engenheiro"){
-            $potencia = 15;
-            $energia = 120;
-            $funcao = "Reparar equipamentos";
-
-      }
-    else if($modelo === "Defensor"){
-
         }
+         else{
+                if($modelo === "explorador"){
+                 
+                    $robo = new Explorador($nome);
+               }
+           else if($modelo === "engenheiro"){
+                 $robo = new Engenheiro($nome);
+
+                }
+            else if($modelo === "Defensor"){
+                $robo = new Defensor($nome);
+                }
     }
 
-    }
-  }
 }
+  
+
 
 ?>
 <!DOCTYPE html>
@@ -64,7 +70,7 @@ abstract class Robo {
     <title>Estaçao Espacial</title>
 </head>
 <body>
-    <form>
+    <form class="" method="POST">
 
         <label>
         
