@@ -53,7 +53,10 @@ class Defensor extends Robo{
 
 //________________________________________________________________//
 
-
+if (!isset($_SESSION["robos"])){
+    $_SESSION["robos"] = [];
+}
+ $mensagem = "";
 //________________________________________________________________//
 
   //request method
@@ -94,10 +97,10 @@ class Defensor extends Robo{
         <label for="nome">Nome do Robo: </label>
         <input type="text" id="nome" nome="nome" placeholder="Nome do robo:">
 
-        <label for="nome">Modelo do Robo: </label>
+        <label for="modelo">Modelo do Robo: </label>
         <input type="text" id="modelo" nome="modelo" placeholder="Modelo do robo:">
 
-        <label for="nome">Nome do operador: </label>
+        <label for="operador">Nome do operador: </label>
         <input type="text" id="operador" nome="operador" placeholder="Nome do operador:">
         <button class="submit">Enviar</button>
     </form>
