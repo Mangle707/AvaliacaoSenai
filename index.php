@@ -4,28 +4,28 @@
 abstract class Robo {
    public $nome;
    public $informs = [
-               $explorador = {
-                    "Energia inicial": "100",
-                    "Potencia" : "20",
-                    "Funçao" : "investigar planetas",
-                         };
-                $engenheiro = {
-                        "Energia inicial" : "120",
-                        "Potencia" : "15",
-                        "Funçao" : "Reparar equipamentos",
-                         };
-                $defensor = {
-                        "Energia inicial" : "150",
-                        "Potencia" : "30",
-                        "Funçao" : "Proteger a estação",
-                        };
+               $explorador => [
+                    "Energia inicial"=> "100",
+                    "Potencia" => "20",
+                    "Funçao" => "investigar planetas",
+               ],
+                $engenheiro => [
+                        "Energia inicial" => "120",
+                        "Potencia" => "15",
+                        "Funçao" => "Reparar equipamentos",
+                ],
+                $defensor => [
+                        "Energia inicial" => "150",
+                        "Potencia" => "30",
+                        "Funçao" => "Proteger a estação",
+                ],
     ];
 
    public function __construct($nome){
     $this->nome = $nome;
     
    }
-   public
+
        abstract public function operar();
 }
 
