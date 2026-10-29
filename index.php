@@ -4,17 +4,17 @@
 abstract class Robo {
    public $nome;
    public $informs = [
-               $explorador => [
+               "explorador" => [
                     "Energia inicial"=> "100",
                     "Potencia" => "20",
                     "Funçao" => "investigar planetas",
                ],
-                $engenheiro => [
+                "engenheiro" => [
                         "Energia inicial" => "120",
                         "Potencia" => "15",
                         "Funçao" => "Reparar equipamentos",
                 ],
-                $defensor => [
+                "defensor" => [
                         "Energia inicial" => "150",
                         "Potencia" => "30",
                         "Funçao" => "Proteger a estação",
@@ -58,8 +58,8 @@ class Defensor extends Robo{
     $operador = $_POST["operador"] ?? "";
     $modelo = $_POST["modelo"] ?? "";
 
-       if($nome === "" || $modelo == "" || $operador){
-        $mensagem == "Campos nao preenchidos";
+       if($nome === "" || $modelo === "" || $operador ===""){
+        $mensagem = "Campos nao preenchidos";
         }
          else{
                 if($modelo === "explorador"){
@@ -70,7 +70,7 @@ class Defensor extends Robo{
                  $robo = new Engenheiro($nome);
 
                 }
-            else if($modelo === "Defensor"){
+            else if($modelo === "defensor"){
                 $robo = new Defensor($nome);
                 }
     }
