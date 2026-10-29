@@ -3,14 +3,29 @@
 
 abstract class Robo {
    public $nome;
-   public $informs[
-     
-   ];
+   public $informs = [
+               $explorador = {
+                    "Energia inicial": "100",
+                    "Potencia" : "20",
+                    "Funçao" : "investigar planetas",
+                         };
+                $engenheiro = {
+                        "Energia inicial" : "120",
+                        "Potencia" : "15",
+                        "Funçao" : "Reparar equipamentos",
+                         };
+                $defensor = {
+                        "Energia inicial" : "150",
+                        "Potencia" : "30",
+                        "Funçao" : "Proteger a estação",
+                        };
+    ];
 
    public function __construct($nome){
     $this->nome = $nome;
     
    }
+   public
        abstract public function operar();
 }
 
@@ -61,9 +76,6 @@ class Defensor extends Robo{
     }
 
 }
-  
-
-
 ?>
 <!DOCTYPE html>
 <html lang="PT-BR">
@@ -76,13 +88,13 @@ class Defensor extends Robo{
     <form class="" method="POST">
 
         <label for="nome">Nome do Robo: </label>
-        <input type="text" id="nome" nome="nome">
+        <input type="text" id="nome" nome="nome" placeholder="Nome do robo:">
 
         <label for="nome">Modelo do Robo: </label>
-        <input type="text" id="modelo" nome="modelo">
+        <input type="text" id="modelo" nome="modelo" placeholder="Modelo do robo:">
 
         <label for="nome">Nome do operador: </label>
-        <input type="text" id="operador" nome="operador">
+        <input type="text" id="operador" nome="operador" placeholder="Nome do operador:">
         <button class="submit">Enviar</button>
     </form>
     <h1>Estaçao espacial</h1>
