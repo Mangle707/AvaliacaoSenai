@@ -3,6 +3,9 @@
 
 abstract class Robo {
    public $nome;
+   public $informs[
+     
+   ];
 
    public function __construct($nome){
     $this->nome = $nome;
@@ -72,9 +75,19 @@ class Defensor extends Robo{
 <body>
     <form class="" method="POST">
 
-        <label>
-        
-        </label>
+        <label for="nome">Nome do Robo: </label>
+        <input type="text" id="nome" nome="nome">
+
+        <label for="nome">Modelo do Robo: </label>
+        <input type="text" id="modelo" nome="modelo">
+
+        <label for="nome">Nome do operador: </label>
+        <input type="text" id="operador" nome="operador">
+        <button class="submit">Enviar</button>
     </form>
+    <h1>Estaçao espacial</h1>
+    <p>Nome do Robo: <?=$nome?></p>
+    <p>Modelo do robo cadastrado: <?=$modelo?></p>
+    <p>Nome do operador: <?=$operador?></p>
 </body>
 </html>
